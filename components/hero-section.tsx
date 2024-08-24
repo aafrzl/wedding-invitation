@@ -36,21 +36,21 @@ export default function HeroSection() {
   return (
     <section className="flex flex-col gap-4 items-center justify-center h-screen bg-hero-pattern text-white">
       <div className="flex flex-col items-center">
-        <Doves className="size-14 stroke-accent" />
-        <p className="font-poppins uppercase text-accent font-semibold">
+        <Doves className="size-14 stroke-foreground" />
+        <p className="font-poppins uppercase text-foreground font-semibold">
           We Are Getting Married
         </p>
       </div>
       <h1 className="font-niconne text-6xl sm:text-8xl font-bold text-foreground">
         Pipit <span className="text-accent">&</span> Bubung
       </h1>
-      <p className="font-poppins font-medium text-accent">
+      <p className="font-poppins font-medium text-foreground">
         15<sup>th</sup> September 2024
       </p>
       {to && (
         <div className="flex flex-col items-center text-sm text-accent">
           <p>
-            Dear <span className="font-bold">{to}</span>,
+            Dear <span className="font-bold text-foreground">{to}</span>,
           </p>
           <p className="text-center text-sm max-w-xs">
             Kami mengundang Bpk/Ibu/Saudara/i untuk hadir dalam acara pernikahan
