@@ -8,6 +8,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: "#D4AF37", // Gold
+        secondary: "#F3E5AB", // Champagne
+        accent: "#B76E79", // Rose Pink
+        background: "#FFF7E6", // Soft Cream
+        foreground: "#5A4A42", // Deep Brown
+        "muted-foreground": "#E8D6B3", // Light Beige
+      },
       container: {
         center: true,
         padding: "1rem",
@@ -21,6 +29,9 @@ const config: Config = {
       fontFamily: {
         poppins: ["var(--font-poppins)"],
         niconne: ["var(--font-niconne)"],
+      },
+      backgroundImage: {
+        "hero-pattern": "url('/bg-hero.png')",
       },
     },
   },

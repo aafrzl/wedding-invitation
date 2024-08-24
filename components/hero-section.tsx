@@ -1,8 +1,8 @@
 "use client";
 import { Mail } from "lucide-react";
-import Doves from "./icons/doves";
 import { useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Doves from "./icons/doves";
 
 export default function HeroSection() {
   const searchParams = useSearchParams();
@@ -12,27 +12,43 @@ export default function HeroSection() {
 
   const handleButtonClick = () => {
     setIvisible(true);
-    //TODO: Scroll to the next section
     scrollTo({
       top: window.innerHeight,
       behavior: "smooth",
     });
   };
 
+  useEffect(() => {
+    if (!isVisible) {
+      // Lock scrolling
+      document.body.style.overflow = "hidden";
+    } else {
+      // Unlock scrolling
+      document.body.style.overflow = "auto";
+    }
+
+    // Cleanup function to unlock scrolling when the component is unmounted or isVisible changes
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isVisible]);
+
   return (
-    <section className="flex flex-col gap-4 items-center justify-center h-screen bg-red-500 text-white">
+    <section className="flex flex-col gap-4 items-center justify-center h-screen bg-hero-pattern text-white">
       <div className="flex flex-col items-center">
-        <Doves className="size-14" />
-        <p className="font-poppins uppercase">We Are Getting Married</p>
+        <Doves className="size-14 stroke-accent" />
+        <p className="font-poppins uppercase text-accent font-semibold">
+          We Are Getting Married
+        </p>
       </div>
-      <h1 className="font-niconne text-6xl sm:text-8xl font-bold">
-        Pipit <span className="text-green-900">&</span> Bubung
+      <h1 className="font-niconne text-6xl sm:text-8xl font-bold text-foreground">
+        Pipit <span className="text-accent">&</span> Bubung
       </h1>
-      <p className="font-poppins font-semibold">
+      <p className="font-poppins font-medium text-accent">
         15<sup>th</sup> September 2024
       </p>
       {to && (
-        <div className="flex flex-col items-center text-sm">
+        <div className="flex flex-col items-center text-sm text-accent">
           <p>
             Dear <span className="font-bold">{to}</span>,
           </p>
@@ -46,7 +62,7 @@ export default function HeroSection() {
         <button
           type="button"
           onClick={handleButtonClick}
-          className="flex items-center gap-2 px-4 py-2 text-white font-medium font-poppins text-sm bg-green-900 hover:bg-green-600 rounded-full"
+          className="flex items-center gap-2 px-4 py-2 text-foreground font-medium font-poppins text-sm bg-primary hover:bg-primary/50 rounded-full transition-all ease-in-out duration-300"
         >
           <Mail size={16} />
           <span>Buka Undangan</span>
