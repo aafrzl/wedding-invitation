@@ -3,7 +3,9 @@ import React from "react";
 
 export default function ProfileSection() {
   return (
-    <section className="flex flex-col items-center justify-center gap-4 px-4 py-14 bg-background">
+    <section 
+    id="profile"
+    className="flex flex-col items-center justify-center gap-4 px-4 py-14 bg-background">
       <div className="flex items-center gap-x-5 border p-4 w-full lg:w-1/2 rounded-xl bg-secondary">
         <Image
           src="/bride-profile.png"

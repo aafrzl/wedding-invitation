@@ -1,9 +1,11 @@
 "use client";
-import EventSection from "@/components/event-section";
-import HeroSection from "@/components/hero-section";
-import IntroSection from "@/components/intro-section";
-import ProfileSection from "@/components/profile-section";
-import SurahSection from "@/components/surah-section";
+import EventSection from "@/components/layout/event-section";
+import HeroSection from "@/components/layout/hero-section";
+import IntroSection from "@/components/layout/intro-section";
+import ProfileSection from "@/components/layout/profile-section";
+import SurahSection from "@/components/layout/surah-section";
+import WishesSection from "@/components/layout/wishes-section";
+import ScrollToTop from "@/components/scroll-to-top";
 import { useState } from "react";
 
 export default function Home() {
@@ -26,6 +28,8 @@ export default function Home() {
           <SurahSection />
           <ProfileSection />
           <EventSection />
+          <WishesSection />
+          <ScrollToTop />
         </main>
       )}
     </>

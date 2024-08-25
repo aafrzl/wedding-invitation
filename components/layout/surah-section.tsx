@@ -13,7 +13,7 @@ export default function SurahSection() {
         fill
         className="absolute inset-0 object-cover -z-10"
       />
-      <div className="absolute inset-0 bg-background opacity-40 -z-10" />
+      <div className="absolute inset-0 bg-background opacity-50 -z-10" />
       <div className="w-full sm:max-w-2xl space-y-2 flex flex-col gap-4 items-center bg-background/10 backdrop-blur-lg p-4 shadow-lg rounded-xl text-foreground text-center">
         <Image
           src={"/bismillah.png"}

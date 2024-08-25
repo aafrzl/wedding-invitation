@@ -32,6 +32,7 @@ const config: Config = {
       },
       backgroundImage: {
         "hero-pattern": "url('/bg-hero.png')",
+        event: "url('/bg-event.png')",
       },
     },
   },

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import Doves from "./icons/doves";
+import Doves from "../icons/doves";
 import { useSearchParams } from "next/navigation";
 import { Mail } from "lucide-react";
 
