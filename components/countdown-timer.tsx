@@ -53,7 +53,7 @@ export default function CountdownTimer({ date }: Props) {
   return (
     <div className="flex flex-col gap-2 items-center">
       {!isCompleted && (
-        <p className="font-niconne text-3xl text-foreground">
+        <p className="font-niconne text-2xl sm:text-3xl text-foreground">
           Menuju hari yang berbahagia!🎉
         </p>
       )}

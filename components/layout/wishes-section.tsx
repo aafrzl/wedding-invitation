@@ -17,14 +17,14 @@ export default function WishesSection() {
     <section className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center container mx-auto py-10">
       <div className="flex flex-col gap-4">
         <div className="space-y-2 max-w-md text-center sm:text-left">
-          <h2 className="font-niconne text-5xl text-foreground">
+          <h2 className="font-niconne text-4xl sm:text-5xl text-foreground">
             Ucapan & Doa Untuk Kedua Mempelai
           </h2>
-          <p className="font-poppins text-accent">
+          <p className="font-poppins text-accent text-sm sm:text-base">
             Tuliskan ucapan dan doa terbaikmu untuk kedua mempelai.
           </p>
         </div>
-        <div className="bg-secondary p-6 w-[450px] sm:w-[500px] rounded-xl">
+        <div className="bg-secondary p-6 w-full sm:w-[500px] rounded-xl">
           <WishesForm />
         </div>
       </div>

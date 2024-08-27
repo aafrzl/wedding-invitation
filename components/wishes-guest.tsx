@@ -12,22 +12,22 @@ interface Props {
 export function WishesGuestDesktop({ wishes, isLoading, error }: Props) {
   if (isLoading)
     return (
-      <div className="flex h-[600px] w-fit flex-row items-center justify-center">
-        <p className="text-center text-accent">Memuat ucapan...</p>
+      <div className="hidden relative sm:flex h-[600px] w-fit flex-row items-center justify-center overflow-hidden">
+        <p className="text-center text-accent text-xl">Memuat ucapan...</p>
       </div>
     );
 
   if (error)
     return (
-      <div className="flex h-[600px] w-fit flex-row items-center justify-center">
-        <p className="text-center text-accent">Gagal memuat ucapan.</p>
+      <div className="hidden relative sm:flex h-[600px] w-fit flex-row items-center justify-center overflow-hidden">
+        <p className="text-center text-accent text-xl">Gagal memuat ucapan.</p>
       </div>
     );
 
   if (wishes.length === 0)
     return (
-      <div className="flex h-[600px] w-fit flex-row items-center justify-center">
-        <p className="text-center text-accent">Belum ada ucapan.</p>
+      <div className="hidden relative sm:flex h-[600px] w-fit flex-row items-center justify-center overflow-hidden">
+        <p className="text-center text-accent text-xl">Belum ada ucapan.</p>
       </div>
     );
 
@@ -74,21 +74,21 @@ export function WishesGuestDesktop({ wishes, isLoading, error }: Props) {
 export function WishesGuestMobile({ wishes, isLoading, error }: Props) {
   if (isLoading)
     return (
-      <div className="flex h-[600px] w-fit flex-row items-center justify-center">
+      <div className="flex relative sm:hidden w-full flex-col items-center justify-center overflow-hidden">
         <p className="text-center text-accent">Memuat ucapan...</p>
       </div>
     );
 
   if (error)
     return (
-      <div className="flex h-[600px] w-fit flex-row items-center justify-center">
+      <div className="flex relative sm:hidden w-full flex-col items-center justify-center overflow-hidden">
         <p className="text-center text-accent">Gagal memuat ucapan.</p>
       </div>
     );
 
   if (wishes.length === 0)
     return (
-      <div className="flex h-[600px] w-fit flex-row items-center justify-center">
+      <div className="flex relative sm:hidden w-full flex-col items-center justify-center overflow-hidden">
         <p className="text-center text-accent">Belum ada ucapan.</p>
       </div>
     );

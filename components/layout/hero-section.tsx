@@ -6,11 +6,12 @@ export default function HeroSection() {
   const to = searchParams.get("to");
 
   return (
-    <section 
-    id="home"
-    className="flex flex-col items-center justify-center px-4 bg-background h-screen bg-hero-pattern">
+    <section
+      id="home"
+      className="flex flex-col items-center justify-center px-4 bg-background h-screen bg-hero-pattern"
+    >
       <div className="flex flex-col gap-4 w-full sm:w-1/2">
-        <h1 className="font-niconne font-bold text-6xl sm:text-8xl text-foreground">
+        <h1 className="font-niconne font-bold text-5xl sm:text-7xl text-foreground">
           Assalamualaikum, <br />
           <span className="font-extrabold font-poppins text-4xl sm:text-6xl">
             {to}
