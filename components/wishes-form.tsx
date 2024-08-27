@@ -1,6 +1,7 @@
-import { Send } from "lucide-react";
+import { Loader2, Send } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import React, { FormEvent, useState } from "react";
+import { mutate } from "swr";
 
 export default function WishesForm() {
   const searchParams = useSearchParams();
@@ -8,18 +9,46 @@ export default function WishesForm() {
 
   const [name, setName] = useState(to || "");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    setLoading(true);
 
-    if (!name || !message) return alert("Nama dan pesan tidak boleh kosong!");
+    if (!name || !message) {
+      alert("Nama dan pesan tidak boleh kosong!");
+      setLoading(false);
+      return;
+    }
 
     const data = {
       name,
       message,
     };
 
-    console.log(data);
+    try {
+      const response = await fetch("/api/wishes", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
+
+      setName("");
+      setMessage("");
+      alert("Ucapan berhasil dikirim!");
+      mutate("/api/wishes"); // Trigger revalidation of SWR
+    } catch (error) {
+      console.error(error);
+      alert("Terjadi kesalahan, silahkan coba lagi!");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -44,9 +73,17 @@ export default function WishesForm() {
       <button
         type="submit"
         className="w-full bg-primary text-white font-bold py-2 rounded-xl shadow-sm transition-all duration-300 ease-in-out hover:bg-accent flex items-center justify-center gap-2"
+        disabled={loading}
       >
-        <Send className="size-5" />
-        <span>Kirim Ucapan</span>
+        {loading ? (
+          <Loader2
+            className="animate-spin"
+            size="24"
+          />
+        ) : (
+          <Send size="24" />
+        )}
+        <span>{loading ? "Mengirim..." : "Kirim Ucapan"}</span>
       </button>
     </form>
   );
