@@ -44,7 +44,9 @@ export function WishesGuestDesktop({ wishes, isLoading, error }: Props) {
         {firstRow.map((wish, i) => (
           <CardWishes
             key={i}
-            {...wish}
+            name={wish.name}
+            message={wish.message}
+            createAt={wish.createdAt}
           />
         ))}
       </Marquee>
@@ -57,7 +59,9 @@ export function WishesGuestDesktop({ wishes, isLoading, error }: Props) {
         {secondRow.map((wish, i) => (
           <CardWishes
             key={i}
-            {...wish}
+            name={wish.name}
+            message={wish.message}
+            createAt={wish.createdAt}
           />
         ))}
       </Marquee>
@@ -101,7 +105,9 @@ export function WishesGuestMobile({ wishes, isLoading, error }: Props) {
         {firstRow.map((wish, i) => (
           <CardWishes
             key={i}
-            {...wish}
+            name={wish.name}
+            message={wish.message}
+            createAt={wish.createdAt}
           />
         ))}
       </Marquee>
@@ -113,7 +119,9 @@ export function WishesGuestMobile({ wishes, isLoading, error }: Props) {
         {secondRow.map((wish, i) => (
           <CardWishes
             key={i}
-            {...wish}
+            name={wish.name}
+            message={wish.message}
+            createAt={wish.createdAt}
           />
         ))}
       </Marquee>
