@@ -1,4 +1,5 @@
 "use client";
+import AudioPlayer from "@/components/audio-player";
 import EventSection from "@/components/layout/event-section";
 import HeroSection from "@/components/layout/hero-section";
 import IntroSection from "@/components/layout/intro-section";
@@ -30,6 +31,7 @@ export default function Home() {
           <EventSection />
           <WishesSection />
           <ScrollToTop />
+          <AudioPlayer src='/audio.mp3' isOpened={showMain} />
         </main>
       )}
     </>
