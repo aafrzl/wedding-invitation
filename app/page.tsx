@@ -7,6 +7,7 @@ import ProfileSection from "@/components/layout/profile-section";
 import SurahSection from "@/components/layout/surah-section";
 import WishesSection from "@/components/layout/wishes-section";
 import ScrollToTop from "@/components/scroll-to-top";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
 export default function Home() {
@@ -19,9 +20,17 @@ export default function Home() {
   return (
     <>
       {!showMain && (
-        <main className="absolute inset-0 z-20">
-          <IntroSection onButtonClick={handleButtonClick} />
-        </main>
+        <AnimatePresence>
+          <motion.main
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+            transition={{ type: "spring" }}
+            className="absolute inset-0 z-20"
+          >
+            <IntroSection onButtonClick={handleButtonClick} />
+          </motion.main>
+        </AnimatePresence>
       )}
       {showMain && (
         <main>
@@ -31,7 +40,10 @@ export default function Home() {
           <EventSection />
           <WishesSection />
           <ScrollToTop />
-          <AudioPlayer src='/audio.mp3' isOpened={showMain} />
+          <AudioPlayer
+            src="/audio.mp3"
+            isOpened={showMain}
+          />
         </main>
       )}
     </>

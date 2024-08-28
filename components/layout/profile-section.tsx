@@ -1,5 +1,5 @@
+import { motion } from "framer-motion";
 import Image from "next/image";
-import React from "react";
 
 export default function ProfileSection() {
   return (
@@ -7,7 +7,12 @@ export default function ProfileSection() {
       id="profile"
       className="flex flex-col items-center justify-center gap-4 px-4 py-14 bg-background"
     >
-      <div className="flex items-center gap-x-5 border p-4 w-full lg:w-1/2 rounded-xl bg-secondary">
+      <motion.div
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.5, delay: 0.5, type: "spring" }}
+        className="flex items-center gap-x-5 border p-4 w-full lg:w-1/2 rounded-xl bg-secondary"
+      >
         <div className="size-28 sm:size-52 relative">
           <Image
             src="/bride-profile.png"
@@ -25,8 +30,13 @@ export default function ProfileSection() {
             Bapak Engkos <br />& Ibu Elus Lusmanah
           </p>
         </div>
-      </div>
-      <div className="flex flex-row-reverse items-center gap-x-5 border p-4 w-full lg:w-1/2 rounded-xl bg-secondary">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.5, delay: 1, type: "spring" }}
+        className="flex flex-row-reverse items-center gap-x-5 border p-4 w-full lg:w-1/2 rounded-xl bg-secondary"
+      >
         <div className="size-28 sm:size-52 relative">
           <Image
             src="/groom-profile.png"
@@ -44,7 +54,7 @@ export default function ProfileSection() {
             Bapak Saeful Uyun <br />& Ibu Haeti
           </p>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

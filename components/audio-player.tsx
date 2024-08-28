@@ -8,7 +8,7 @@ interface Props {
 }
 
 export default function AudioPlayer({ src, isOpened }: Props) {
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [isPlaying, setIsPlaying] = useState<boolean>(true);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {

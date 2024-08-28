@@ -20,9 +20,6 @@ export async function POST(req: NextRequest) {
   try {
     const { name, message } = await req.json();
 
-    console.log("name", name);
-    console.log("message", message);
-
     if (!name || !message) {
       return { error: "Name and message are required" };
     }
