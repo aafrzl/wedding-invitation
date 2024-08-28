@@ -16,7 +16,7 @@ export async function GET(req: Request) {
   }
 }
 
-export async function POST(req: NextRequest) {
+export async function POST(req: NextRequest): Promise<any> {
   try {
     const { name, message } = await req.json();
 
