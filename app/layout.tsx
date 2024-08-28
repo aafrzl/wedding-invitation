@@ -21,6 +21,32 @@ export const metadata: Metadata = {
   title: "Wedding of Pipit & Bubung",
   description:
     "Kepada Yth. Bapak/Ibu/Saudara/i kami undang untuk hadir dalam acara pernikahan kami.",
+  openGraph: {
+    title: "Wedding of Pipit & Bubung",
+    description:
+      "Kepada Yth. Bapak/Ibu/Saudara/i kami undang untuk hadir dalam acara pernikahan kami.",
+    images: [
+      {
+        url: `${process.env.BASE_URL}/feature-images.png`,
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Wedding of Pipit & Bubung",
+    description:
+      "Kepada Yth. Bapak/Ibu/Saudara/i kami undang untuk hadir dalam acara pernikahan kami.",
+    creator: "@aafrzl",
+    images: [
+      {
+        url: `${process.env.BASE_URL}/feature-images.png`,
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
