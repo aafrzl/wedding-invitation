@@ -1,13 +1,10 @@
-"use client"
+"use client";
 import { Loader2, Send } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import React, { FormEvent, useState } from "react";
 import { mutate } from "swr";
 
-export default function WishesForm() {
-  const searchParams = useSearchParams();
-  const to = searchParams.get("to");
-
+export default function WishesForm({ to }: { to: string }) {
   const [name, setName] = useState(to || "");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);

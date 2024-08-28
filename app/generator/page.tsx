@@ -1,7 +1,7 @@
 "use client";
 
 import { Send } from "lucide-react";
-import React, { ChangeEvent, useEffect, useRef, useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 export default function GeneratorPage() {
   const defaultIntroMessage = `

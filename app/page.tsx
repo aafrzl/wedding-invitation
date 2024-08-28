@@ -10,8 +10,15 @@ import ScrollToTop from "@/components/scroll-to-top";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
-export default function Home() {
+interface Props {
+  searchParams: {
+    to: string;
+  };
+}
+
+export default function Home({ searchParams }: Props) {
   const [showMain, setShowMain] = useState(false);
+  const { to } = searchParams;
 
   const handleButtonClick = () => {
     setShowMain(true);
@@ -28,17 +35,20 @@ export default function Home() {
             transition={{ type: "spring" }}
             className="absolute inset-0 z-20"
           >
-            <IntroSection onButtonClick={handleButtonClick} />
+            <IntroSection
+              onButtonClick={handleButtonClick}
+              to={to}
+            />
           </motion.main>
         </AnimatePresence>
       )}
       {showMain && (
         <main>
-          <HeroSection />
+          <HeroSection to={to} />
           <SurahSection />
           <ProfileSection />
           <EventSection />
-          <WishesSection />
+          <WishesSection to={to} />
           <ScrollToTop />
           <AudioPlayer
             src="/audio.mp3"

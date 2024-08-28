@@ -7,12 +7,10 @@ import Doves from "../icons/doves";
 
 interface Props {
   onButtonClick: () => void;
+  to: string;
 }
 
-export default function IntroSection({ onButtonClick }: Props) {
-  const searchParams = useSearchParams();
-  const to = searchParams.get("to");
-
+export default function IntroSection({ onButtonClick, to }: Props) {
   const text = "15 September 2024";
   const [displayedText, setDisplayedText] = React.useState("");
   const [i, setI] = React.useState(0);

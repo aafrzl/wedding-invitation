@@ -6,7 +6,7 @@ import { GuestWishes } from "@prisma/client";
 import { fetcher } from "@/lib/utils";
 import { motion } from "framer-motion";
 
-export default function WishesSection() {
+export default function WishesSection({to}: {to: string}) {
   const {
     data: wishes,
     error,
@@ -42,7 +42,7 @@ export default function WishesSection() {
           transition={{ duration: 1, delay: 1.5 }}
           className="bg-secondary p-6 w-full sm:w-[500px] rounded-xl"
         >
-          <WishesForm />
+          <WishesForm to={to}/>
         </motion.div>
       </div>
       <WishesGuestDesktop
