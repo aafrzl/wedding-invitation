@@ -5,7 +5,7 @@ export default function ProfileSection() {
   return (
     <section
       id="profile"
-      className="flex flex-col items-center justify-center gap-4 px-4 py-14 bg-background"
+      className="flex flex-col items-center justify-center gap-4 px-4 py-14 bg-background overflow-hidden"
     >
       <motion.div
         initial={{ opacity: 0, x: 100 }}

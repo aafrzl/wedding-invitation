@@ -35,9 +35,14 @@ export default function WishesSection() {
             Tuliskan ucapan dan doa terbaikmu untuk kedua mempelai.
           </motion.p>
         </div>
-        <div className="bg-secondary p-6 w-full sm:w-[500px] rounded-xl">
+        <motion.div
+          initial={{ opacity: 0, filter: "blur(10px)" }}
+          whileInView={{ opacity: 1, filter: "blur(0px)" }}
+          transition={{ duration: 1, delay: 1.5 }}
+          className="bg-secondary p-6 w-full sm:w-[500px] rounded-xl"
+        >
           <WishesForm />
-        </div>
+        </motion.div>
       </div>
       <WishesGuestDesktop
         wishes={wishes || []}
