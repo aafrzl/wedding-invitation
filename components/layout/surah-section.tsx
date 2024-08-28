@@ -1,3 +1,4 @@
+"use client"
 import { FADE_DOWN_ANIMATION_VARIANTS } from "@/lib/animations";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Heart } from "lucide-react";

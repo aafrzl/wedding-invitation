@@ -1,3 +1,4 @@
+"use client"
 import { Loader2, Send } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import React, { FormEvent, useState } from "react";

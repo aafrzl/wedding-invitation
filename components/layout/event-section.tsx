@@ -1,3 +1,4 @@
+"use client"
 import { CalendarCheck, Clock, MapPin } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import CountdownTimer from "../countdown-timer";

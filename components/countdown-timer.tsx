@@ -1,3 +1,4 @@
+"use client"
 import confetti from "canvas-confetti";
 import Countdown from "react-countdown";
 import TimeBox from "./time-box";

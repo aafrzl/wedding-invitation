@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Marquee from "./marquee";
 import CardWishes from "./card-wishes";

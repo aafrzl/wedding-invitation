@@ -1,3 +1,4 @@
+"use client"
 import { AnimatePresence, Variants, motion } from "framer-motion";
 import { ChevronUp } from "lucide-react";
 import React, { useEffect, useState } from "react";

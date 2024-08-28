@@ -1,3 +1,4 @@
+"use client"
 import WishesForm from "../wishes-form";
 import { WishesGuestDesktop, WishesGuestMobile } from "../wishes-guest";
 import useSWR from "swr";
